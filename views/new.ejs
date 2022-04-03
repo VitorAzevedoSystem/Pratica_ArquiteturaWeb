@@ -5,22 +5,42 @@
     <title>
         <%= title %>
     </title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='../stylesheets/style.css' />
 </head>
 
 <body>
-    <h1>
-        <%= title %>
-    </h1>
-    <form action="<%= action %>" method="POST">
-        <p>titulo:<input type="text" name="titulo" value="<%= doc.titulo %>" /></p>
-        <p>sinopse:<input type="text" name="sinopse" value="<%= doc.sinopse %>" /></p>
-        <p>duracao:<input type="number" name="duracao" value="<%= doc.duracao %>" /></p>
-        <p>dataLancamento:<input type="text" name="dataLancamento" value="<%= doc.dataLancamento %>" /></p>
-        <p>imagem:<input type="text" name="imagem" value="<%= doc.imagem %>" /></p>
-        <p>categoria:<input type="text" name="categorias" value="<%= doc.categorias %>" /></p>
-        <input type="submit" value="Salvar" />
-    </form>
+    <section class="contain">
+        <h1>
+            <%= title %>
+        </h1>
+        <form action="<%= action %>" method="POST" class="teste">
+            <div class="d-flex direction-row mb-1">
+                <label for="titulo">Título</label>
+                <input type="text" class="form-input" name="titulo" value="<%= doc.titulo %>" />
+            </div>
+            <div class="d-flex direction-row mb-1">
+                <label for="sinopse">Sinopse</label>
+                <input type="text" class="form-input" name="sinopse" value="<%= doc.sinopse %>" />
+            </div>
+            <div class="d-flex direction-row mb-1">
+                <label for="duracao">Duração</label>
+                <input type="text" class="form-input" name="duracao" value="<%= doc.duracao %>" />
+            </div>
+            <div class="d-flex direction-row mb-1">
+                <label for="dataLancamento">dataLancamento</label>
+                <input type="text" class="form-input" name="dataLancamento" value="<%= doc.dataLancamento %>" />
+            </div>
+            <div class="d-flex direction-row mb-1">
+                <label for="imagem">imagem</label>
+                <input type="text" class="form-input" name="imagem" value="<%= doc.imagem %>" />
+            </div>
+            <div class="d-flex direction-row mb-1">
+                <label for="categoria">categoria</label>
+                <input type="text" class="form-input" name="categoria" value="<%= doc.categoria %>" />
+            </div>
+            <input class="btn btn-default" type="submit" value="Salvar" />
+        </form>
+    </section>
 </body>
 
 </html>

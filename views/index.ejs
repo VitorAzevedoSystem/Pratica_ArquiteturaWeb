@@ -3,28 +3,45 @@
 
 <head>
   <title>
-    <%= title %>
   </title>
   <link rel='stylesheet' href='../stylesheets/style.css' />
 </head>
 
 <body>
-  <h1>
-    <%= title %>
-  </h1>
-  <ul>
-    <% docs.forEach(function(customer){ %>
-      <li>
-        <p><a href="/edit/<%= customer._id %>">
-            <%= customer.titulo %>
-          </a> &nbsp;
-          <a href="/delete/<%= customer._id %>" onclick="return confirm('Tem certeza que deseja excluir?');"> X </a>
-        </p>
-      </li>
-      <% }) %>
-  </ul>
-  <hr />
-  <a href="/new">Cadastrar novo Filme</a>
+  <section class="contain">
+    <h1>
+      Titulo
+    </h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Nome do Filme</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% docs.forEach(function(customer){ %>
+          <tr>
+            <th><a href="/edit/<%= customer._id %>">
+                <%= customer._id %>
+              </a>
+            </th>
+            <td>
+              <%= customer.titulo %>
+            </td>
+            <td>
+              <a href="/delete/<%= customer._id %>" onclick="return confirm('Tem certeza que deseja excluir?');">
+                Excluir
+              </a>
+              <a href="/edit/<%= customer._id %>"> Editar </a>
+            </td>
+          </tr>
+          <% }) %>
+      </tbody>
+    </table>
+    <a class="btn btn-default" href="/new">Cadastrar novo Filme</a>
+  </section>
 </body>
 
 </html>
